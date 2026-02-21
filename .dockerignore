@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# venv / conda
+.venv/
+venv/
+env/
+*.egg-info/
+
+# local data
+data/
+*.db
+
+# git
+.git/
+.gitignore
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

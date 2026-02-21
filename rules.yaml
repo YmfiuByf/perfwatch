@@ -1,0 +1,21 @@
+version: 1
+
+rules:
+  - type: threshold
+    probe_prefix: "ping:"
+    warn_ms: 250
+    crit_ms: 600
+
+  - type: threshold
+    probe_prefix: "http:"
+    warn_ms: 800
+    crit_ms: 1500
+
+  # 偶发慢：最近窗口的 baseline 上浮到某个倍数就报警
+  - type: baseline
+    probe_prefix: "http:"
+    window_size: 50         # 用最近 50 个成功样本做基线
+    method: "p90"           # baseline 用 p90
+    factor_warn: 1.8        # 当前 latency >= baseline * 1.8 => warn
+    factor_crit: 2.5        # 当前 latency >= baseline * 2.5 => critical
+    min_baseline_ms: 50     # baseline 太小会过敏，设置下限
