@@ -1,4 +1,4 @@
-# PerfWatch (Docker)
+# PerfWatch
 
 PerfWatch is a lightweight monitoring + alerting tool packaged for easy startup with Docker. It collects simple probe metrics, stores them in SQLite, evaluates threshold rules, and exposes a small web dashboard/API. Optional features include alert deduplication/cooldown, webhook delivery (with optional auth header/token), and AI-assisted analysis (DeepSeek) appended to alert records.
 
