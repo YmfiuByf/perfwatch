@@ -20,5 +20,6 @@ From the project root:
 ```bash
 docker build -t perfwatch:dev .
 docker run --rm -p 8080:8080 --env-file .env perfwatch:dev
+```
 
 ![Result](results/preview.png)
